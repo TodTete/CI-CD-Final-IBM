@@ -1,0 +1,29 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: cleanup
+spec:
+  steps:
+    - name: limpiar-entorno
+      image: ubuntu
+      script: |
+        #!/bin/bash
+        echo "Eliminando archivos temporales..."
+        rm -rf __pycache__ .pytest_cache .coverage
+
+---
+
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: nose-tests
+spec:
+  steps:
+    - name: ejecutar-pruebas
+      image: python:3.9-slim
+      script: |
+        #!/bin/bash
+        pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install nose
+        nosetests -v --with-spec --spec-color --with-coverage --cover-package=app

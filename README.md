@@ -33,6 +33,6 @@ Licensed under the Apache License. See [LICENSE](/LICENSE)
 
 ## Author
 
-Skills Network / Finalizado por Ricardo Vallejo para el laboratorio
+Skills Network / Finalizado por @TodTete Ricardo Vallejo para el laboratorio
 
 ## <h3 align="center"> © IBM Corporation 2023. All rights reserved. <h3/>
